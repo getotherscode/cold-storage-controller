@@ -1,2 +1,8 @@
 #Drivers
 Drivers/*
+
+#build
+build/*
+
+#cache
+.cache/*
