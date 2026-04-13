@@ -57,6 +57,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define COMPRESSOR_Pin GPIO_PIN_3
+#define COMPRESSOR_GPIO_Port GPIOD
+#define ALARM_Pin GPIO_PIN_3
+#define ALARM_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

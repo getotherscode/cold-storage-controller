@@ -20,6 +20,7 @@ target_include_directories(stm32cubemx INTERFACE
     ../../Drivers/CMSIS/Include
     ../../FreeRTOS-Kernel-G0/include
     ../../FreeRTOS-Kernel-G0/portable/GCC/ARM_CM0
+    ../../APP/include
 )
 
 target_sources(stm32cubemx INTERFACE
@@ -56,6 +57,8 @@ target_sources(stm32cubemx INTERFACE
     ../../FreeRTOS-Kernel-G0/portable/MemMang/heap_4.c
     ../../FreeRTOS-Kernel-G0/portable/GCC/ARM_CM0/portasm.c
     ../../startup_stm32g070xx.s
+    ../../APP/source/compressor.c
+    ../../APP/source/alarm.c
 )
 
 target_link_directories(stm32cubemx INTERFACE

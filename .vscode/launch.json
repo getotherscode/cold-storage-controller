@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug (DAPLink)",
+            "type": "cortex-debug",
+            "gdbPath": "arm-none-eabi-gdb",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/cold-storage-controller.elf",
+            "servertype": "openocd",
+            "configFiles": [
+                "interface/cmsis-dap.cfg",
+                "target/stm32g0x.cfg"
+            ],
+              "openOCDLaunchCommands": [
+                "adapter speed 5000"
+            ],
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "raw",
+            "svdFile": "STM32G070.svd",
+            "swoConfig": {
+                "enabled": false
+            }
+        }
+    ]
+}
