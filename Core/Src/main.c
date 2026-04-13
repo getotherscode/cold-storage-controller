@@ -22,7 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "FreeRTOS.h"
+#include "task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -145,6 +146,25 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void vApplicationTickHook(void)
+{
+    HAL_IncTick();
+}
+
+void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
+{
+    (void)xTask;
+    (void)pcTaskName;
+    /* 栈溢出，进入死循环，调试时可以在这里打断点 */
+    while(1);
+}
+
+void vApplicationMallocFailedHook(void)
+{
+    /* 堆分配失败，进入死循环 */
+    while(1);
+}
 
 /* USER CODE END 4 */
 
