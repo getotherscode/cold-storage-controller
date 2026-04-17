@@ -93,7 +93,6 @@ int main(void)
     xTaskCreate(compressor_main, "compressor main function", 128, NULL, 1, NULL);
 
     vTaskStartScheduler();
-    alarm_ctrl(ALARM_RELAY_ON);
 
   /* USER CODE END 2 */
 
