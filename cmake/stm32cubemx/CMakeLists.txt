@@ -64,6 +64,7 @@ target_sources(stm32cubemx INTERFACE
     ../../startup_stm32g070xx.s
     ../../APP/source/compressor.c
     ../../APP/source/alarm.c
+    ../../APP/source/adc_app.c
 )
 
 target_link_directories(stm32cubemx INTERFACE

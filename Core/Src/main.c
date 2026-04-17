@@ -25,9 +25,11 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS.h"
+#include "stm32g0xx_hal_adc.h"
 #include "task.h"
 #include "../../APP/include/compressor.h"
 #include "../../APP/include/alarm.h"
+#include <stdint.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -94,14 +96,14 @@ int main(void)
   MX_DMA_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-    xTaskCreate(compressor_main, "compressor main function", 128, NULL, 1, NULL);
-
-    vTaskStartScheduler();
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  xTaskCreate(compressor_main, "compressor main function", 128, NULL, 1, NULL);
+
+  vTaskStartScheduler();
   while (1)
   {
     /* USER CODE END WHILE */
