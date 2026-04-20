@@ -30,6 +30,7 @@
 #include "../../APP/include/compressor.h"
 #include "../../APP/include/alarm.h"
 #include <stdint.h>
+#include "adc_app.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,7 +103,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   xTaskCreate(compressor_main, "compressor main function", 128, NULL, 1, NULL);
-
+  xTaskCreate(adc_task, "ADC", 256, NULL, 1, &adcTaskHandle);
   vTaskStartScheduler();
   while (1)
   {

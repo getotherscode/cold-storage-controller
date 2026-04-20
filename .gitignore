@@ -6,3 +6,7 @@ build/*
 
 #cache
 .cache/*
+
+#config for different workbench
+.vscode/settings.json
+compile_commands.json

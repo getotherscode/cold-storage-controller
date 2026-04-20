@@ -1,3 +1,4 @@
 {
-    "clangd.path": "D:\\app\\clang\\LLVM\\bin\\clangd.exe"
+    "clangd.path": "D:/software/app/LLVM/bin/clangd.exe",
+    "editor.detectIndentation": false,
 }
